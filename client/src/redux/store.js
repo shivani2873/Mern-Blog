@@ -1,11 +1,13 @@
 import {configureStore,combineReducers} from '@reduxjs/toolkit'
 import userReducer from './user/userSlice'
-import persistReducer from 'redux-persist/es/persistReducer';
+import themeReducer from './theme/themeSlice'
+import {persistReducer,persistStore} from 'redux-persist/es/persistReducer';
 import { version } from 'mongoose';
-import persistStore from 'redux-persist/es/persistStore';
+import {storage} from 'redux-persist/lib/storage'
 
 const rootReducer=combineReducers({
     user:userReducer,
+    theme:themeReducer,
 });
 
 //this will store the user information
