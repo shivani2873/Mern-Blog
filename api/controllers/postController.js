@@ -34,11 +34,7 @@ export const getposts = async (req, res, next) => {
           { content: { $regex: req.query.searchTerm, $options: 'i' } },
         ],
       }),
-    })
-      .sort({ updatedAt: sortDirection })
-      .skip(startIndex)
-      .limit(limit);
-
+    }).sort({ updatedAt: sortDirection }).skip(startIndex).limit(limit);
     const totalPosts = await Post.countDocuments();
     const now = new Date();
     const oneMonthAgo = new Date(now.getFullYear(),now.getMonth() - 1,now.getDate());
