@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import PvtRoute from './components/PvtRoute'
 import AdminPvtRoute from './components/AdminPvtRoute'
 import CreatePost from './pages/CreatePost'
+import UpdatePost from './pages/UpdatePost'
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
       </Route>
       <Route element={<AdminPvtRoute/>}>
         <Route path='/create-post' element={<CreatePost/>}/>
+        <Route path='/update-post/:postId' element={<UpdatePost/>}/>
       </Route>
       <Route path='/projects' element={<Projects/>}/>
      </Routes>
