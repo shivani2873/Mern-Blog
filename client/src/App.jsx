@@ -9,6 +9,8 @@ import Projects from './pages/Projects'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PvtRoute from './components/PvtRoute'
+import AdminPvtRoute from './components/AdminPvtRoute'
+import CreatePost from './pages/CreatePost'
 
 export default function App() {
   return (
@@ -21,6 +23,9 @@ export default function App() {
       <Route path='sign-up' element={<SignUp/>}/>
       <Route element={<PvtRoute/>}>
         <Route path='/dashboard' element={<Dashboard/>}/>
+      </Route>
+      <Route element={<AdminPvtRoute/>}>
+        <Route path='/create-post' element={<CreatePost/>}/>
       </Route>
       <Route path='/projects' element={<Projects/>}/>
      </Routes>
